@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define PI 3.14
-
+#include <math.h>
 int main()
 {
     //area();
     //largeNumber();
     //sizes();
-    withSpaces();
+    //withSpaces();
+    quadraticRoots();
     return 0;
 }
 void area()
@@ -57,4 +58,34 @@ void withSpaces()
     printf("Name: ");
     scanf("%[^\n]s", name);
     printf("%s", name);
+}
+void quadraticRoots()
+{
+    int a, b, c;
+    float x1, x2, D, img1, img2;
+
+    printf("Enter a, b, c: ");
+    scanf("%d %d %d", &a, &b, &c);
+    D = (b*b)-(4*a*c);
+    if(D>0)
+    {
+        x1 = (-b+(sqrt(D)))/(2*a);
+        x2 = (-b-(sqrt(D)))/(2*a);
+        printf("x1: %.2f and x2: %.2f", x1, x2);
+    }else
+    {
+        if(D==0)
+        {
+            x1 = x2 = -b/(2*a);
+            printf("Both roots are equal and is %.2f", x1);
+        }else
+        {
+            x1 = x2 = -b/(2*a);
+            img1 = sqrt(-D);
+            img2 = sqrt(-D);
+            printf("x1: %.2f + %.2fi ", x1, img1);
+            printf("x2: %.2f - %.2fi ", x1, img1);
+        }
+    }
+
 }

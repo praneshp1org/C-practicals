@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1623517059 source:d:\calebcurry\l2\main.c
+1623518639 source:d:\calebcurry\l2\main.c
 	<stdio.h>
 	<stdlib.h>
+	<math.h>
 
