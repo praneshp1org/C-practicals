@@ -5,7 +5,9 @@
 int main()
 {
     //area();
-    largeNumber();
+    //largeNumber();
+    //sizes();
+    withSpaces();
     return 0;
 }
 void area()
@@ -37,4 +39,22 @@ void largeNumber()
         }
     }
 
+}
+void sizes()
+{
+    int a;
+    float b;
+    double c;
+    char d;
+    printf("Size of int is %d bytes.\n", sizeof(a));
+    printf("Size of float is %d bytes.\n", sizeof(b));
+    printf("Size of double is %d bytes.\n", sizeof(c));
+    printf("Size of char is %d bytes.\n", sizeof(d));
+}
+void withSpaces()
+{
+    char name[20];
+    printf("Name: ");
+    scanf("%[^\n]s", name);
+    printf("%s", name);
 }
