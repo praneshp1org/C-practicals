@@ -5,7 +5,8 @@ void main()
 {
     //negativeNumber();
     //largestNumber();
-    secondLargest();
+    //secondLargest();
+    electricBills();
 }
 void negativeNumber()
 {
@@ -64,7 +65,26 @@ void secondLargest()
             printf("%d is second largest", num2);
         }else
         {
-            printf("%d is second largest", num3);
+            printf("%d is second largest", num1);
         }
+    }
+}
+void electricBills()
+{
+    float billUnit, billAmt;
+    printf("Your bill unit: ");
+    scanf("%f", &billUnit);
+    if(billUnit<=20)
+    {
+        billAmt = 80;
+        printf("Your bill amount is Rs. %0.2f", billAmt);
+    }else if(billUnit>20 && billUnit<=100)
+    {
+        billAmt = 80 + (7.30*(billUnit-20));
+        printf("Your bill amount is Rs. %0.2f", billAmt);
+    }else
+    {
+        billAmt = 80+(7.30*80)+(9*(billUnit-120));
+        printf("Your bill amount is %.2f", billAmt);
     }
 }
