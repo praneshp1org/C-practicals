@@ -2,16 +2,18 @@
 
 void main()
 {
-    int n,t1=1, t2=1, nextTerm=t1+t2;
-    printf("Number of terms: ");
-    scanf("%d", &n);
-    printf("%d\n", t1);
-    printf("%d\n", t2);
-    for(int i = 1; i<=n; i++)
+    int num, binary[32], rem, i=0;
+    printf("Decimal Number: ");
+    scanf("%d", &num);
+    while(num>0)
     {
-        printf("%d\n", nextTerm);
-        t1 = t2;
-        t2 = nextTerm;
-        nextTerm = t1+t2;
+        binary[i] = num%2; //Storing in an array
+        num = num/2;
+        i++;
+
+    }
+    for(int j = i-1; j>=0; j--)
+    {
+        printf("%d", binary[j]); //reversing an array
     }
 }
