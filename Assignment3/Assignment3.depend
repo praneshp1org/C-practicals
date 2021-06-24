@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1624536013 source:d:\calebcurry\assignment3\main.c
+1624557421 source:d:\calebcurry\assignment3\main.c
 	<stdio.h>
 	<stdbool.h>
+	<math.h>
 
