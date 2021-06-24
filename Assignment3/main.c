@@ -4,7 +4,8 @@
 void main()
 {
     //primeChecker();
-    GCDLCM();
+    //GCDLCM();
+    palindromeChecker();
 }
 void primeChecker()
 {
@@ -47,4 +48,25 @@ void GCDLCM()
     }
     lcm = product/num1;
     printf("GCD is %d and LCM is %d", num1, lcm);
+}
+void palindromeChecker()
+{
+    int num, rev=0, n, digit;
+    printf("Number: ");
+    scanf("%d", &num);
+    n = num;
+    do
+    {
+        digit = num%10;
+        rev=rev*10+digit;
+        num/=10;
+    }while(num!=0);
+    if(n==rev)
+    {
+        printf("Palindrome!");
+
+    }else
+    {
+        printf("NOT PALINDROME!");
+    }
 }
