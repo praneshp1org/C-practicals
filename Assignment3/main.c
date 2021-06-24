@@ -3,7 +3,8 @@
 
 void main()
 {
-    primeChecker();
+    //primeChecker();
+    GCDLCM();
 }
 void primeChecker()
 {
@@ -26,4 +27,24 @@ void primeChecker()
     {
         printf("PRIME");
     }
+}
+void GCDLCM()
+{
+    int num1, num2, product, lcm;
+    printf("Numbers: ");
+    scanf("%d %d", &num1, &num2);
+    product = num1*num2;
+    while(num1!=num2)
+    {
+        if(num1>num2)
+        {
+            num1-=num2;
+
+        }else
+        {
+            num2-=num1;
+        }
+    }
+    lcm = product/num1;
+    printf("GCD is %d and LCM is %d", num1, lcm);
 }
