@@ -1,90 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdbool.h>
 
 void main()
 {
-    //negativeNumber();
-    //largestNumber();
-    //secondLargest();
-    electricBills();
+    primeChecker();
 }
-void negativeNumber()
+void primeChecker()
 {
-
-    int num;
+    bool isPrime = true;
+    int num, divisor;
     printf("Number: ");
     scanf("%d", &num);
-    if(num<0)
+    for(int i =2; i<num; i++)
     {
-        printf("NEGATIVE NUMBER!");
-    }
-}
-void largestNumber()
-{
-    int num1, num2, num3;
-    printf("Three numbers: ");
-    scanf("%d %d %d", &num1, &num2, &num3);
-    if(num1>num2)
-    {
-        if(num1>num3)
+        if(num%i == 0)
         {
-            printf("%d is largest. ", num1);
-        }else
-        {
-            printf("%d is largest. ", num3);
-        }
-    }else
-    {
-        if(num2>num3)
-        {
-            printf("%d is largest.", num2);
-        }else
-        {
-            printf("%d is largest", num3);
+            isPrime = false;
+            break;
         }
     }
-}
-void secondLargest()
-{
-    int num1, num2, num3;
-    printf("Numbers: ");
-    scanf("%d %d %d", &num1, &num2, &num3);
-    if(num1>num2)
+    if(!isPrime)
     {
-        if(num1<num3)
-        {
-            printf("%d is second largest.", num1);
-        }else
-        {
-            printf("%d is second largest", num3);
-        }
+        printf("NOT PRIME!");
     }else
     {
-        if(num2<num3)
-        {
-            printf("%d is second largest", num2);
-        }else
-        {
-            printf("%d is second largest", num1);
-        }
-    }
-}
-void electricBills()
-{
-    float billUnit, billAmt;
-    printf("Your bill unit: ");
-    scanf("%f", &billUnit);
-    if(billUnit<=20)
-    {
-        billAmt = 80;
-        printf("Your bill amount is Rs. %0.2f", billAmt);
-    }else if(billUnit>20 && billUnit<=100)
-    {
-        billAmt = 80 + (7.30*(billUnit-20));
-        printf("Your bill amount is Rs. %0.2f", billAmt);
-    }else
-    {
-        billAmt = 80+(7.30*80)+(9*(billUnit-120));
-        printf("Your bill amount is %.2f", billAmt);
+        printf("PRIME");
     }
 }
